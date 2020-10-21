@@ -2,15 +2,18 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import axios from 'axios'
-Vue.prototype.axios = axios;
+//引进element
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.min.css'
 
-import login from '../components/index'
-Vue.use(login);
 
-Vue.config.productionTip = false;
+require('echarts-wordcloud');
+Vue.config.productionTip = false
 
+// Vue.config.devtools = true;//开发者模式,能使用chrome上的vue工具
+Vue.use(MintUI);
 new Vue({
+  el:'#app',
   router,
   store,
   render: h => h(App)
